@@ -1,2 +1,2 @@
 # Arab Open University - KSA 
-theme: jekyll-theme-Architect
+remote_theme: Architect
