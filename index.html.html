@@ -1,12 +1,19 @@
 
-
+<!-- Declares the document type and version of HTML-->
 <!DOCTYPE html>
+<!--Opens the root HTML element, specifying the language as English-->
 <html lang="en">
+<!-- head: Contains metadata and links to external resources.-->
 <head>
+<!--Specifies the character encoding for the document.-->
 <meta charset="UTF-8">
+<!--Optimizes the viewport for mobile devices, ensuring responsive design.-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--Sets the title of the webpage, which appears in the browser's tab.-->
 <title>Arab Open University</title>
+<!--CSS rules to style the webpage.-->
 <style>
+/*body rule sets the font, margins, padding, background color, and text color.*/
   body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -14,25 +21,23 @@
     background-color: #fdfdfd00;
     color: #000000;
   }
+  /*header rule adds padding and centers the text*/
   .header {
     padding: 10px 10px;
     text-align: center;
   }
+  /*header::after clears floats, ensuring the document flow is not disrupted by floated elements*/
 .header::after {
   content: "";
   display: table;
   clear: both;
 }
-
+/*header img styles images in the header, specifically setting their width and floating them to the left*/
 .header img {
   width: 200px; /* You can adjust this as per your logo's aspect ratio */
   float: left; /* This will align your image to the left */
 }
-
-  .header h1 {
-    color: rgb(0, 0, 0);
-    margin: 0;
-  }
+/*chatbot-icon positions a chatbot icon fixedly at the bottom right corner.*/
   .chatbot-icon {
     position: fixed;
     bottom: 10px;
@@ -42,6 +47,7 @@
   .chatbot-icon img {
     width: 80px; /* Adjust as per your preference */
   }
+  /*styles the footer, setting its background color, text color, text alignment, padding, positioning, and width.*/
   .footer {
     background-color: navy;
     color: white;
@@ -52,45 +58,45 @@
     width: 100%;
   }
 
- 
-  
+  .icon-circle {
+    display: inline-block;
+    padding: 20px;
+    border-radius: 50%;
+    border: 2px solid;
+    font-size: 24px;
+    width: 8000px;
+    height: 80000000px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 400px;
+}
  </style>
 </head>
+
+
 <body>
-    
 <div class="header">
+<!--contains two images, styled as part of the header.-->
   <img src="logo.png" alt="Arab Open University Logo">
-  <img src="LOGO2.png" alt="Arab Open University Logo"> <!-- Make sure the path to the logo image is correct -->
+  <img src="LOGO2.png" alt="Arab Open University Logo"> 
 </div>
   <div class="footer">
+<!-- contains a paragraph with contact information.-->
     <p>Contact us at info@arabou.edu.sa</p>
   </div>
 </body>
 </html>
 
-    <style>
-        .icon-circle {
-            display: inline-block;
-            padding: 20px;
-            border-radius: 50%;
-            border: 2px solid;
-            font-size: 24px;
-            width: 8000px;
-            height: 80000000px;
-            text-align: center;
-            vertical-align: middle;
-            line-height: 400px;
-        }
-    </style>
-</head>
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Banner</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
+/* contains divs with classes .banner-image, displaying images that form a banner. 
+Two Font Awesome icons serve as left and right navigation arrows, 
+calling a changeBanner function when clicked.*/        
         .banner {
             width: 100%;
             height: 400px;
@@ -129,7 +135,6 @@
     </style>
 </head>
 <body>
-
 <div class="banner">
     <!-- These are the images in the banner -->
     <div class="banner-image active" style="background-image: url('A4.jpg');"></div>
@@ -140,6 +145,8 @@
     <i class="fas fa-arrow-circle-right arrow right" onclick="changeBanner(1)"></i>
 </div>
 
+<!--defines the changeBanner function, enabling navigation through the banner images by adding or 
+    removing the active class based on the current index and direction of navigation.-->
 <script>
     var currentImageIndex = 0;
     var images = document.getElementsByClassName('banner-image');
@@ -150,12 +157,14 @@
         images[currentImageIndex].classList.add('active');
     }
 </script>
-
 </body>
 </html>
+
+
 <body>
-    
-    <div class="bg-white p-6">
+<!--Additional content includes a series of divs styled to display various options like
+ "Apply Online" and "e-Learning (LMS)" with icons-->    
+    <div class="bg-white p-4">
         <div class="flex justify-around">
             <!-- Apply Online -->
             <div class="text-center">
@@ -205,7 +214,7 @@
                 <p class="mt-2">Email</p>
             </div>
 
-          
+    
             <!DOCTYPE html>
             <html lang="en">
             <head>
@@ -242,20 +251,17 @@
                       overflow-y: auto; /* Adds scroll for overflow content */
                   }
                   .close-chat {
-                      position: absolute;
-                      top: 0;
-                      right: 0;
-                      padding: 10px;
-                      cursor: pointer;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    padding: 10px;
+                    cursor: pointer;
                     }
                 </style>
             </head>
-            <body>
-                <!-- ...other HTML... -->
-              
-              </body>
-              </html>
-              <div class="bg-white p-15">
+            </html>
+
+            <div class="bg-white p-15">
                 <div class="flex justify-around">
                     <!-- ...other icons... -->
                     <div class="text-center">
@@ -266,16 +272,14 @@
                     </div>
                 </div>
             </div>
-            
-            
                 <!-- Chat Interface -->
                 <div class="chat-interface" id="chatInterface">
                     <div class="close-chat" onclick="closeChatInterface()">
                         <i class="fas fa-times"></i>
                     </div>
 
-                    <!-- Chatbot UI content goes here -->
-                   <!--The framework used here is Bootstrap-->
+                <!-- Chatbot UI content goes here -->
+                <!--The framework used here is Bootstrap-->
 <!-- specifies that this document is an HTML5 document.-->
 <!DOCTYPE html>
 <!--is the root element of an HTML page, and lang="en" specifies that the document's language is English.-->
@@ -291,8 +295,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-    
+<body>    
     <!-- Your chatbot HTML goes here.. -->
     <div class="container mt-3">
         <div class="col-md-8 offset-md-2">
@@ -306,6 +309,7 @@
                     </div>
                     <!-- Messages will go here -->
                 </div>
+                
                 <div class="card-footer">
                     <div class="input-group">
                         <input type="text" id="user-input" class="form-control" placeholder="Ask me a question ?">
@@ -327,43 +331,63 @@
 
     <!-- Send button script -->
     <script>
+/* This line registers an event listener that waits for the entire document (HTML) to be fully loaded and parsed before running the enclosed function. 
+This ensures that the DOM elements the script interacts with are available.*/        
         document.addEventListener('DOMContentLoaded', function() {
+/* Finds an element with the ID send-btn and assigns it to the variable sendButton.
+This element is presumably the button users will click to send a message.*/            
             const sendButton = document.getElementById('send-btn');
+/*Retrieves the element with the ID user-input, likely an input field where users type their message,
+and assigns it to the variable userInputField*/             
             const userInputField = document.getElementById('user-input');
+/*elects the element with the ID chat-box, which is probably the container where messages will be displayed,
+and stores it in the variable chatBox.*/                       
             const chatBox = document.getElementById('chat-box');
-
+/*: Adds a click event listener to the sendButton. When clicked, it triggers the enclosed function.*/
             sendButton.addEventListener('click', function() {
+/*Gets the current value (text) of the userInputField, trims whitespace from both ends, and stores it in the variable userInput.*/                
                 const userInput = userInputField.value.trim();
+/*Checks if userInput contains any non-whitespace characters. If true (meaning there's input), it proceeds to execute the block of code inside the braces.*/                
                 if (userInput) {
+/* with two arguments: the user's input and the string "aaa.webp", indicating an image path. This function is designed to display the message and image in the chat interface*/                    
                     displayMessageWithImage(userInput, "aaa.webp");
+/*Clears the input field by setting its value to an empty string, readying it for the next message.*/                    
                     userInputField.value = '';
+/*Sets the scroll position of the chatBox to its maximum height. This ensures the chat box scrolls down to show the latest message if it extends beyond the visible area.*/                    
                     chatBox.scrollTop = chatBox.scrollHeight;
                 }
             });
-
+/*Defines the function displayMessageWithImage, which creates a new chat message element with an associated image and adds it to the chat box. 
+The function takes two parameters: message (the text of the message) and imagePath (the path to the image file).*/
             function displayMessageWithImage(message, imagePath) {
+/*Creates a new <div> element to hold the message and image, stored in messageContainer.*/                
                 const messageContainer = document.createElement('div');
+/*Adds CSS classes to messageContainer for styling purposes, assuming a CSS framework or custom styles are being used.*/                
                 messageContainer.classList.add('d-flex', 'flex-row', 'mb-6');
 
-                const imageElement = document.createElement('img');
+/*Creates a new <img> element for the message's associated image.*/                const imageElement = document.createElement('img');
                 imageElement.src = imagePath;
                 imageElement.alt = '';
-                imageElement.classList.add('mr-3');
+                /*Adds a class for margin-right styling*/
+                imageElement.classList.add('mr-2');
                 imageElement.style.width = '40px';
                 imageElement.style.height = '40px';
                 imageElement.style.borderRadius = '50%';
-
+/*Creates a new <div> element to hold the text of the message.*/
                 const textElement = document.createElement('div');
+/*Sets the text content of textElement to the user's message.*/
                 textElement.textContent = message;
+/*Adds a CSS class for styling the message text.*/
                 textElement.classList.add('chat-message');
-
+/*Adds imageElement and textElement as children to messageContainer, assembling the complete message block.*/
                 messageContainer.appendChild(imageElement);
                 messageContainer.appendChild(textElement);
+/*dds the messageContainer (containing the message and image) to the chatBox, making the message visible in the chat interface.*/
                 chatBox.appendChild(messageContainer);
             }
         });
-        
     </script>
+    
     <!-- Move styles to head for organization -->
     <style>
         .custom-dark-blue {
@@ -394,15 +418,21 @@
             margin-right: auto;
         }
     </style>
-    
-</div>
-            
+</body>
+</html>
 <script>
+/*This line defines a JavaScript function named openChatInterface. Functions are reusable blocks of code that perform a specific task.
+In this case, the task is to open or show a chat interface.*/    
     function openChatInterface() {
+/*Inside the openChatInterface function, this line of code selects an HTML element with the ID chatInterface and sets its CSS display property to 'block'. This action changes the element's display style to block, 
+making it visible on the page if it was previously hidden.*/        
         document.getElementById('chatInterface').style.display = 'block';
     }
-
+/*This line begins the definition of another JavaScript function named closeChatInterface.
+This function's purpose is to hide the chat interface.*/
     function closeChatInterface() {
+/* Within the closeChatInterface function, this line selects the same HTML element with the ID chatInterface but instead sets its CSS display property to 'none'. This effectively hides the element from the webpage,
+making the chat interface invisible to the user.*/        
         document.getElementById('chatInterface').style.display = 'none';
     }
 </script>
@@ -411,5 +441,36 @@
 </body>
 </html>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ask OpenAI</title>
+</head>
+<body>
+    <input type="text" id="question" placeholder="Ask me anything...">
+    <button onclick="askQuestion()">Ask</button>
+    <div id="answer"></div>
 
+    <script>
+        async function askQuestion() {
+            const questionInput = document.getElementById('question');
+            const question = questionInput.value;
+            const serverlessFunctionUrl = 'YOUR_SERVERLESS_FUNCTION_ENDPOINT'; // Replace with your actual serverless function URL
 
+            try {
+                const response = await fetch(`${serverlessFunctionUrl}?question=${encodeURIComponent(question)}`);
+                const data = await response.json();
+                
+                // Assuming the serverless function returns the OpenAI response directly
+                document.getElementById('answer').innerText = data.choices[0].text;
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('answer').innerText = 'Failed to get an answer.';
+            }
+        }
+        const serverlessFunctionUrl = 'https://sara131013.github.io/index.html.html'; // Replace with your actual serverless function URL
+
+    </script>
+</body>
+</html>
