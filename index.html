@@ -37,16 +37,6 @@
   width: 200px; /* You can adjust this as per your logo's aspect ratio */
   float: left; /* This will align your image to the left */
 }
-/*chatbot-icon positions a chatbot icon fixedly at the bottom right corner.*/
-  .chatbot-icon {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    cursor: pointer;
-  }
-  .chatbot-icon img {
-    width: 80px; /* Adjust as per your preference */
-  }
   /*styles the footer, setting its background color, text color, text alignment, padding, positioning, and width.*/
   .footer {
     background-color: navy;
@@ -57,22 +47,8 @@
     bottom: 0;
     width: 100%;
   }
-
-  .icon-circle {
-    display: inline-block;
-    padding: 20px;
-    border-radius: 50%;
-    border: 2px solid;
-    font-size: 24px;
-    width: 8000px;
-    height: 80000000px;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 400px;
-}
  </style>
 </head>
-
 
 <body>
 <div class="header">
@@ -235,141 +211,25 @@ calling a changeBanner function when clicked.*/
                         margin: auto;
                         cursor: pointer;
                     }
-                    .chat-interface {
-                      display: none; /* Initially hidden */
-                      position: fixed; /* Stay in place on screen */
-                      top: 10%; /* Adjust top as needed */
-                      right: 10px; /* Position to the right */
-                      width: 800px; /* Width of the chat window */
-                      max-width: 150%; /* Ensures it doesn't overflow the screen width */
-                      height: calc(100% - 20%); /* Height is the full viewport height minus some margin */
-                      background-color: white;
-                      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                      border-radius: 10px;
-                      padding: 10px;
-                      z-index: 1000;
-                      overflow-y: auto; /* Adds scroll for overflow content */
-                  }
-                  .close-chat {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    padding: 10px;
-                    cursor: pointer;
-                    }
                 </style>
+                <script type="text/javascript">
+                    (function(d, t) {
+                        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+                        v.onload = function() {
+                          window.voiceflow.chat.load({
+                            verify: { projectID: '660aecad93ed495c078c321b' },
+                            url: 'https://general-runtime.voiceflow.com',
+                            versionID: 'production'
+                          });
+                        }
+                        v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+                    })(document, 'script');
+                  </script>
             </head>
-            </html>
-
-            <div class="bg-white p-15">
-                <div class="flex justify-around">
-                    <!-- ...other icons... -->
-                    <div class="text-center">
-                        <div class="icon-circle cursor-pointer" onclick="openChatInterface()">
-                            <i class="fas fa-comment-dots"></i> <!-- Font Awesome robot icon -->
-                        </div>
-                        <p class="mt-2">Chatbot</p>
-                    </div>
-                </div>
-            </div>
-                <!-- Chat Interface -->
-                <div class="chat-interface" id="chatInterface">
-                    <div class="close-chat" onclick="closeChatInterface()">
-                        <i class="fas fa-times"></i>
-                    </div>
-
-                <!-- Chatbot UI content goes here -->
-                <!--The framework used here is Bootstrap-->
-<!-- specifies that this document is an HTML5 document.-->
-<!DOCTYPE html>
-<!--is the root element of an HTML page, and lang="en" specifies that the document's language is English.-->
-<html lang="en">
-<head>
-<!--UTF-8 : contains meta-information about the document, such as its charset and title.-->
-    <meta charset="UTF-8">
-<!--sets the title of the webpage, which appears in the browser's title bar or tab.-->
-    <title>AOU BF Chatbot </title>
-    <!-- Bootstrap CSS , providing styling frameworks for the page.-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Include Font Awesome CSS for the icons if it's not already included -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>    
-    <!-- Your chatbot HTML goes here.. -->
-    <div class="container mt-3">
-        <div class="col-md-8 offset-md-2">
-            <div class="card">
-                <div class="card-header bg-primary custom-dark-blue text-white header-container">
-                    <div class="header-title">Ask AOU BF</div>
-                </div>
-                <div class="card-body" id="chat-box" style="height: 350px; overflow-y: auto;">
-                    <div class="chatbot-header">
-                        <span style="color: #000000; font-family: 'Arial', sans-serif;">Hi, I'm AOU best friend here to help you. I will do my best for you</span>
-                    </div>
-                    <!-- Messages will go here -->
-                </div>
-                
-                <div class="card-footer">
-                    <div class="input-group">
-                        <input type="text" id="user-input" class="form-control" placeholder="Ask me a question ?">
-                        <div class="input-group-append">
-                            <button id="send-btn" class="btn btn-outline-secondary">
-                                <i class="fa fa-arrow-right"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bootstrap JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.7.12/umd.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  
-
-</body>
-</html>
-    <!-- Send button script -->
+            </html>                
     <script>
-        
-/* This line registers an event listener that waits for the entire document (HTML) to be fully loaded and parsed before running the enclosed function. 
-This ensures that the DOM elements the script interacts with are available.*/        
-        document.addEventListener('DOMContentLoaded', function() {
-/* Finds an element with the ID send-btn and assigns it to the variable sendButton.
-This element is presumably the button users will click to send a message.*/            
-            const sendButton = document.getElementById('send-btn');
-/*Retrieves the element with the ID user-input, likely an input field where users type their message,
-and assigns it to the variable userInputField*/             
-            const userInputField = document.getElementById('user-input');
-/*elects the element with the ID chat-box, which is probably the container where messages will be displayed,
-and stores it in the variable chatBox.*/                       
-            const chatBox = document.getElementById('chat-box');
-/*: Adds a click event listener to the sendButton. When clicked, it triggers the enclosed function.*/
-            sendButton.addEventListener('click', function() {
-/*Gets the current value (text) of the userInputField, trims whitespace from both ends, and stores it in the variable userInput.*/                
-                const userInput = userInputField.value.trim();
-/*Checks if userInput contains any non-whitespace characters. If true (meaning there's input), it proceeds to execute the block of code inside the braces.*/                
-                if (userInput) {
-/* with two arguments: the user's input and the string "aaa.webp", indicating an image path. This function is designed to display the message and image in the chat interface*/                    
-                    displayMessageWithImage(userInput, "aaa.webp");
-/*Clears the input field by setting its value to an empty string, readying it for the next message.*/                    
-                    userInputField.value = '';
-/*Sets the scroll position of the chatBox to its maximum height. This ensures the chat box scrolls down to show the latest message if it extends beyond the visible area.*/                    
-                    chatBox.scrollTop = chatBox.scrollHeight;
-                }
-            });
-/*Defines the function displayMessageWithImage, which creates a new chat message element with an associated image and adds it to the chat box. 
-The function takes two parameters: message (the text of the message) and imagePath (the path to the image file).*/
-            function displayMessageWithImage(message, imagePath) {
-/*Creates a new <div> element to hold the message and image, stored in messageContainer.*/                
-                const messageContainer = document.createElement('div');
-/*Adds CSS classes to messageContainer for styling purposes, assuming a CSS framework or custom styles are being used.*/                
-                messageContainer.classList.add('d-flex', 'flex-row', 'mb-6');
-
-/*Creates a new <img> element for the message's associated image.*/                const imageElement = document.createElement('img');
+/*Creates a new <img> element for the message's associated image.*/         
+                const imageElement = document.createElement('img');
                 imageElement.src = imagePath;
                 imageElement.alt = '';
                 /*Adds a class for margin-right styling*/
@@ -378,115 +238,8 @@ The function takes two parameters: message (the text of the message) and imagePa
                 imageElement.style.height = '40px';
                 imageElement.style.borderRadius = '50%';
 /*Creates a new <div> element to hold the text of the message.*/
-                const textElement = document.createElement('div');
-/*Sets the text content of textElement to the user's message.*/
-                textElement.textContent = message;
-/*Adds a CSS class for styling the message text.*/
-                textElement.classList.add('chat-message');
 /*Adds imageElement and textElement as children to messageContainer, assembling the complete message block.*/
                 messageContainer.appendChild(imageElement);
                 messageContainer.appendChild(textElement);
-/*dds the messageContainer (containing the message and image) to the chatBox, making the message visible in the chat interface.*/
-                chatBox.appendChild(messageContainer);
-            }
-        });
-    </script>
-    
-    <!-- Move styles to head for organization -->
-    <style>
-        .custom-dark-blue {
-            background-color: navy !important;
-        }
-        .close-btn {
-            float: right; /* Correct position */
-            font-size: 20px;
-            color: white;
-            border: none;
-            background: none;
-        }
-        .header-title {
-            text-align: center;
-            font-size: 24px;
-            font-family: 'Times New Roman', serif;
-            color: #ffffff;
-            margin-top: 2px;
-            margin-bottom: 2px;
-        }
-        .chatbot-header {
-            text-align: left;
-        }
-        .chat-message {
-            border-radius: 15px;
-            background-color: #f4f4f4;
-            padding: 10px;
-            margin-right: auto;
-        }
-    </style>
-</body>
-</html>
-<script>
-/*This line defines a JavaScript function named openChatInterface. Functions are reusable blocks of code that perform a specific task.
-In this case, the task is to open or show a chat interface.*/    
-    function openChatInterface() {
-/*Inside the openChatInterface function, this line of code selects an HTML element with the ID chatInterface and sets its CSS display property to 'block'. This action changes the element's display style to block, 
-making it visible on the page if it was previously hidden.*/        
-        document.getElementById('chatInterface').style.display = 'block';
-    }
-/*This line begins the definition of another JavaScript function named closeChatInterface.
-This function's purpose is to hide the chat interface.*/
-    function closeChatInterface() {
-/* Within the closeChatInterface function, this line selects the same HTML element with the ID chatInterface but instead sets its CSS display property to 'none'. This effectively hides the element from the webpage,
-making the chat interface invisible to the user.*/        
-        document.getElementById('chatInterface').style.display = 'none';
-    }
-<script type="text/javascript">
-  (function(d, t) {
-      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-      v.onload = function() {
-        window.voiceflow.chat.load({
-          verify: { projectID: '660b1c6a06d7c32b1ccaaa0a' },
-          url: 'https://general-runtime.voiceflow.com',
-          versionID: 'production'
-        });
-      }
-      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-  })(document, 'script');
-</script>  
-</script>
-</body>
-</html>
-</body>
-</html>   
- <script>
-    function sendQuestion() {
-        const userInput = document.getElementById('user-input');
-        const chatBox = document.getElementById('chat-box');
-        const question = userInput.value;
-    
-        // Clear the input box after getting the question
-        userInput.value = '';
-    
-        // Display the user's question in the chat interface
-        chatBox.innerHTML += `<div>User: ${question}</div>`;
-    
-        // Replace 'YOUR_SERVERLESS_FUNCTION_ENDPOINT' with the endpoint URL
-        fetch('https://sara131013.github.io/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                // Include any necessary headers here
-            },
-            body: JSON.stringify({ prompt: question })
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Assuming the response data contains the text in a property named 'text'
-            // You might need to adjust this based on the actual response structure
-            const answer = data.choices[0].text.trim();
-    
-            // Display OpenAI's response in the chat interface
-            chatBox.innerHTML += `<div>Bot: ${answer}</div>`;
-        })
-        .catch(error => console.error('Error:', error));
-    }
-</script>    
+    </script> 
+
