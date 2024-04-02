@@ -439,6 +439,19 @@ This function's purpose is to hide the chat interface.*/
 making the chat interface invisible to the user.*/        
         document.getElementById('chatInterface').style.display = 'none';
     }
+<script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '660b1c6a06d7c32b1ccaaa0a' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production'
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>  
 </script>
 </body>
 </html>
@@ -477,16 +490,3 @@ making the chat interface invisible to the user.*/
         .catch(error => console.error('Error:', error));
     }
 </script>    
-<script type="text/javascript">
-  (function(d, t) {
-      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-      v.onload = function() {
-        window.voiceflow.chat.load({
-          verify: { projectID: '660b1c6a06d7c32b1ccaaa0a' },
-          url: 'https://general-runtime.voiceflow.com',
-          versionID: 'production'
-        });
-      }
-      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-  })(document, 'script');
-</script>
