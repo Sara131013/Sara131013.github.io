@@ -10,26 +10,6 @@
 <!--Sets the title of the webpage, which appears in the browser's tab.-->
 <title>Arab Open University</title>
 <!--CSS rules to style the webpage.-->
-<style>
-/*body rule sets the font, margins, padding, background color, and text color.*/
-  body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fdfdfd00;
-    color: #000000;
-  }
-  /*styles the footer, setting its background color, text color, text alignment, padding, positioning, and width.*/
-  .footer {
-    background-color: navy;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
- </style>
 
 
 <!--contains two images, styled as part of the header.-->
@@ -37,17 +17,32 @@
   <img src="logo.png" alt="Arab Open University Logo">
   <img src="LOGO2.png" alt="Arab Open University Logo"> 
 </div>
-  <div class="footer">
-<!-- contains a paragraph with contact information.-->
-    <p>Contact us at info@arabou.edu.sa</p>
-  </div>
 <style>
     /*header img styles images in the header, specifically setting their width and floating them to the left*/
     .header img {
         width: 200px; /* You can adjust this as per your logo's aspect ratio */
         float: left; /* This will align your image to the left */
-      }
+    }
 </style>
+
+
+<div class="footer">
+<!-- contains a paragraph with contact information.-->
+    <p>Contact us at info@arabou.edu.sa</p>
+</div>
+  <style>
+    /*styles the footer, setting its background color, text color, text alignment, padding, positioning, and width.*/
+    .footer {
+      background-color: navy;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+   </style>
+  
 
 <!-- These are the images in the banner -->
     <div class="banner">
@@ -99,8 +94,10 @@ calling a changeBanner function when clicked.*/
         }
 </style>
 
-<!--defines the changeBanner function, enabling navigation through the banner images by adding or 
-    removing the active class based on the current index and direction of navigation.-->
+<!--s a variable that tracks the index of the currently displayed image in the banner.
+It is initially set to 0, meaning the first image is shown by default.
+images : is an array-like object containing all elements on the page that have the class name `'banner-image'`.
+currentImageIndex :This line removes the `'active'` class from the currently displayed image. -->
 <script>
         var currentImageIndex = 0;
         var images = document.getElementsByClassName('banner-image');
@@ -113,7 +110,9 @@ calling a changeBanner function when clicked.*/
 </script>    
 
 <!--Additional content includes a series of divs styled to display various options like
- "Apply Online" and "e-Learning (LMS)" with icons-->    
+"Apply Online" and "e-Learning (LMS)" with icons-->   
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
+     
     <div class="bg-white p-4">
         <div class="flex justify-around">
             <!-- Apply Online -->
@@ -158,11 +157,7 @@ calling a changeBanner function when clicked.*/
                 </div>
                 <p class="mt-2">Email</p>
             </div>
-
-<!-- Icons-->
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <script src="https://cdn.tailwindcss.com"></script>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">            
+            <script src="https://cdn.tailwindcss.com"></script>
                 <style>
                     .icon-circle {
                         display: inline-flex;
@@ -176,8 +171,9 @@ calling a changeBanner function when clicked.*/
                         cursor: pointer;
                     }
                 </style>
+
+
 <!--chatbot interface-->
-          
 <script type="text/javascript">
     (function(d, t) {
         var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
@@ -190,9 +186,9 @@ calling a changeBanner function when clicked.*/
         }
         v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
     })(document, 'script');
-  </script>
+</script>
 
-            </head>
-            </html>                
+</head>
+</html>                
 
 
