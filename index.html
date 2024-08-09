@@ -174,19 +174,53 @@ currentImageIndex :This line removes the `'active'` class from the currently dis
 
 
 <!--chatbot interface-->
-<script type="text/javascript">
-    (function(d, t) {
-        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-        v.onload = function() {
-          window.voiceflow.chat.load({
-            verify: { projectID: '662410cea57ba524623ab2a5' },
-            url: 'https://general-runtime.voiceflow.com',
-            versionID: 'production'
-          });
-        }
-        v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-    })(document, 'script');
+<script src="https://cdn.botpress.cloud/webchat/v2/inject.js"></script>
+<script src="https://mediafiles.botpress.cloud/31f2929d-675e-4f7a-9e0e-e1e94f9bfbed/webchat/v2/config.js">
 </script>
+          
+      window.botpressWebChat.onEvent(
+               (event) => {
+                  if (event.type === 'MESSAGE.RECEIVED') {
+                      console.log('A new message was received!')
+                     if(event.value.paylosd.textYou 'can choose a file'}{
+                        const fileInput document.createElement("input");
+                        fileInput.type -'file; fileinput.addEventListener('change", (event)= 
+
+18
+
+19
+
+const file event.target.files[0]; console.log('Selected file:", file);
+
+28
+
+2
+
+const reader new FileReader(); const title file.name; type: trigger,
+
+reader.onload async function(event) { const filecontent event.target.result;
+
+25
+
+consele.log('File t:, filecontent); consele.Iog("File , title); indo.botpressiebChatsendPayload(
+
+28
+
+payload:
+
+title: title, content: fileContent
+
+reader.readAsDataUMi (file);
+
+MESSAGE.RECEIVED'
+
+</scrspt
+
+payload You
+                      }
+                },
+               ['MESSAGE.RECEIVED']
+               )    
 
 </head>
 </html>                
